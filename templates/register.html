@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+<h2>Please enter your credentials.</h2>
+<form method="post">
+    <ul style="list-style: none;">
+    	<li>
+    		<p>Name</p>
+    		<input type="text" name="username" value="{{ username }}">
+            <span class="error">{{ error.invalid_name }}{{ error.already_exists }}</span>
+    	</li>
+    	<li>
+    		<p>Password</p>
+    		<input type="password" name="password"><span class="error">{{error.invalid_password }}</span>
+    	</li>
+    	<li>
+    		<p>Verify password</p>
+    		<input type="password" name="verify"><span class="error">{{ error.password_not_match }}</span>
+    	</li>
+    	<li>
+    		<p>Email (optional)</p>
+    		<input type="text" name="email" value="{{email}}"><span class="error">{{ error.invalid_email }}</span>
+    	</li>
+    	<br>
+    	<input type="submit" name="send" value="Register">
+    </ul>
+</form>
+
+{% endblock content %}
