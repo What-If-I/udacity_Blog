@@ -25,5 +25,6 @@ app = WSGIApplication([
     Route(r'/blog<:/?>', handlers.BlogPage),
     Route(r'/blog/signup<:/?>', handlers.RegisterPage),
     Route(r'/blog/welcome<:/?>', handlers.WelcomePage),
-    Route(r'/blog/login<:/?>', handlers.LoginPage)
+    Route(r'/blog/login<:/?>', handlers.LoginPage),
+    Route(r'/blog/logout<:/?>', handlers.LogoutPage)
 ], debug=True)

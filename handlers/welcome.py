@@ -11,4 +11,4 @@ class WelcomePage(Handler):
             user_name = database.get_username_by_id(user_id_cookie.split("|")[0])
             self.write("Hello %s!" % user_name)
         else:
-            self.write("No cookies for you =(")
+            self.redirect("/blog/signup/")

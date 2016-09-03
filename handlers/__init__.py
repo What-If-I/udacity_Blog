@@ -4,3 +4,4 @@ from handlers.redirects import *
 from handlers.register import *
 from handlers.welcome import *
 from handlers.login import *
+from handlers.logout import *
