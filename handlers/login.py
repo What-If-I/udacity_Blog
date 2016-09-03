@@ -6,13 +6,7 @@ from functions import check
 
 class LoginPage(Handler):
     def get(self, *args, **kwargs):
-        user_id_cookie = self.request.cookies.get('user_id')
-
-        if user_id_cookie:
-            if hashing.valid_user_cookie(user_id_cookie):
-                self.redirect("/blog/welcome")
-        else:
-            self.render("login.html")
+        self.render("login.html")
 
     def post(self, *args, **kwargs):
         username = self.request.get("username")
