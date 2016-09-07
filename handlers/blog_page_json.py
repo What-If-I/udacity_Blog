@@ -16,19 +16,3 @@ class BlogPageJson(Handler):
         json_output = json.dumps(posts_list)
         self.response.headers['Content-Type'] = 'application/json; charset=UTF-8'
         self.write(json_output)
-
-
-# def get(self, post_id):
-#     post_id = int(post_id)
-#     post = Posts.get_by_id(post_id)
-#     post_dict = {"content": post.content,
-#                  "title": post.title,
-#                  "created": post.created.strftime("%d-%m-%Y")
-#                  }
-#     json_output = json.dumps(post_dict)
-#     if post:
-#         self.response.headers['Content-Type'] = 'application/json; charset=UTF-8'
-#         self.write(json_output)
-#     else:
-#         self.error(404)
-#         self.write("404 Page not found")
