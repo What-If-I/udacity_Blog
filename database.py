@@ -19,8 +19,6 @@ class Users(db.Model):
 
 
 class Posts(db.Model):
-    user_id = db.IntegerProperty(required=True)
     title = db.StringProperty(required=True)
-    post = db.TextProperty(required=True)
-    created_date = db.DateTimeProperty(auto_now_add=True)
-    last_modified_date = db.DateTimeProperty(auto_now=True)
+    content = db.TextProperty(required=True)
+    created = db.DateTimeProperty(auto_now_add=True)

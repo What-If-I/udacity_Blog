@@ -23,8 +23,12 @@ import handlers
 app = WSGIApplication([
     Route('/', handlers.RedirectToBlog),
     Route(r'/blog<:/?>', handlers.BlogPage),
+    Route(r'/blog/.json', handlers.BlogPageJson),
     Route(r'/blog/signup<:/?>', handlers.RegisterPage),
     Route(r'/blog/welcome<:/?>', handlers.WelcomePage),
     Route(r'/blog/login<:/?>', handlers.LoginPage),
-    Route(r'/blog/logout<:/?>', handlers.LogoutPage)
+    Route(r'/blog/logout<:/?>', handlers.LogoutPage),
+    Route(r'/blog/<post_id:\d+>', handler=handlers.PostView),
+    Route(r'/blog/<post_id:\d+>.json', handler=handlers.PostViewJson),
+    Route('/blog/newpost<:/?>', handlers.SubmitPost)
 ], debug=True)

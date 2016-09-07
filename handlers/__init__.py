@@ -5,3 +5,7 @@ from handlers.register import *
 from handlers.welcome import *
 from handlers.login import *
 from handlers.logout import *
+from handlers.post_single import *
+from handlers.submit_post import *
+from handlers.post_view_json import *
+from handlers.blog_page_json import *
