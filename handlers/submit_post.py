@@ -1,3 +1,5 @@
+from google.appengine.api import memcache
+
 from main_handler import *
 from database import *
 from functions.cache import cache
@@ -19,7 +21,7 @@ class SubmitPost(Handler):
             post.put()
             post_id = post.key().id()
             cache(str(post_id), post, update=True)
-            cache('posts_top_10', Posts.all().order('-created').fetch(limit=10), update=True)
+            memcache.delete('posts_top_10')
 
             return self.redirect("/blog/%s" % post_id)
         else:

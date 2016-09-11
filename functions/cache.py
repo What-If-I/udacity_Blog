@@ -7,9 +7,10 @@ Cache = namedtuple("Cache", "data timestamp")
 
 def cache(key, queue, update=False):
     cached = memcache.get(key)
-    if cached is not None and not update:
+    if cached and not update:
         return cached
     else:
+        print 'Updated!'
         cached = Cache(queue, time.time())
-        memcache.add(key, cached)
+        memcache.set(key, cached)
     return cached
