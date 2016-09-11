@@ -9,3 +9,4 @@ from handlers.post_single import *
 from handlers.submit_post import *
 from handlers.post_view_json import *
 from handlers.blog_page_json import *
+from handlers.flush_cache import *

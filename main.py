@@ -30,5 +30,6 @@ app = WSGIApplication([
     Route(r'/blog/logout<:/?>', handlers.LogoutPage),
     Route(r'/blog/<post_id:\d+>', handler=handlers.PostView),
     Route(r'/blog/<post_id:\d+>.json', handler=handlers.PostViewJson),
-    Route('/blog/newpost<:/?>', handlers.SubmitPost)
+    Route(r'/blog/newpost<:/?>', handlers.SubmitPost),
+    Route(r'/blog/flush<:/?>', handlers.FlushCache)
 ], debug=True)
