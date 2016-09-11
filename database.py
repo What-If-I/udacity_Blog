@@ -22,3 +22,10 @@ class Posts(db.Model):
     title = db.StringProperty(required=True)
     content = db.TextProperty(required=True)
     created = db.DateTimeProperty(auto_now_add=True)
+
+    def as_dict(self):
+        dictionary = {"content": self.content,
+                      "subject": self.title,
+                      "created": self.created.strftime("%d-%m-%Y")
+                      }
+        return dictionary

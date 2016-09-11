@@ -21,7 +21,7 @@ from webapp2 import Route
 import handlers
 
 app = WSGIApplication([
-    Route('/', handlers.RedirectToBlog),
+    Route('/', handlers.RedirectToMainPage),
     Route(r'/blog<:/?>', handlers.BlogPage),
     Route(r'/blog/.json', handlers.BlogPageJson),
     Route(r'/blog/signup<:/?>', handlers.RegisterPage),

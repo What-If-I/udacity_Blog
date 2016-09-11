@@ -1,6 +1,6 @@
 from main_handler import *
 
 
-class RedirectToBlog(Handler):
+class RedirectToMainPage(Handler):
     def get(self, *args):
         return self.redirect('/blog')
